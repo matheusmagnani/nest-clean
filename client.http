@@ -7,8 +7,8 @@ POST {{baseUrl}}/accounts
 Content-Type: application/json
 
 {
-  "name": "Julia",
-  "email": "julia@gmail.com",
+  "name": "Robson",
+  "email": "robson@gmail.com",
   "password": "123456"
 }
 
@@ -19,15 +19,28 @@ POST {{baseUrl}}/sessions
 Content-Type: application/json
 
 {
-  "email": "julia@gmail.com",
+  "email": "robson@gmail.com",
   "password": "123456"
 }
 
 ###
 
 # @name create_question
-POST {{baseUrl}}/question
+POST {{baseUrl}}/questions
 Content-Type: application/json
 Authorization: Bearer {{authToken}}
+
+{
+  "title": "Nova Pergunta 3",
+  "content": "Como fazer uma pergunta?"
+}
+
+###
+
+# @name fetch_recent_questions
+GET {{baseUrl}}/questions?page=3
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
 
 ###
